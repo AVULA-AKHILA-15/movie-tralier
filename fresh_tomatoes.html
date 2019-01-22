@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: skyblue;
+        }
+        img{
+              border-radius:50%;
+         }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Telugu Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qD-6d8Wo3do" data-toggle="modal" data-target="#trailer">
+    <img src="https://images.financialexpress.com/2017/05/1.jpg" width="220" height="342">
+    <h2 style="color:red">BAHUBALICONCLUSION</h2>
+    <h3 style="color:blue"><p>revenge drama</p></h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QNyGMX37h7g" data-toggle="modal" data-target="#trailer">
+    <img src="https://data1.ibtimes.co.in/cache-img-900-0-photo/en/full/40546/1459848780_vijays-policeodu-first-look-poster-revealed-today-2-april.jpg" width="220" height="342">
+    <h2 style="color:red">POLICEODU</h2>
+    <h3 style="color:blue"><p>family entertain</p></h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="dNMe5oRfsCE" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.25cineframes.com/images/uploads/2018/09/Reddy-Ikkada-Soodu-Full-Video-Song-HD-1080P-Aravinda-Sametha-Veera-Raghava-Telugu-Movie-Aravinda-Sametha-Veera-Raghava-Video-Songs-Jr-Ntr-Pooja-Hegde-Thaman-S.jpg" width="220" height="342">
+    <h2 style="color:red">AARAVINDASAMETHA</h2>
+    <h3 style="color:blue"><p>action triler</p></h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="OYK2eJ0oeg8" data-toggle="modal" data-target="#trailer">
+    <img src="https://1847884116.rsc.cdn77.org/telugu/news/geethagovindam230818_c-524.jpg" width="220" height="342">
+    <h2 style="color:red">GEETHAGOVINDAM</h2>
+    <h3 style="color:blue"><p>entertine</p></h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="None" data-toggle="modal" data-target="#trailer">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTEhMWFhUXFRcVGBcVGBUVFRgVFxUXFxcVFxUYHSggGBolHRYVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy8lICUtLSstLTAtLS0vLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAGAAIDBAUBBwj/xABEEAABAwIDBQUGBAMFBwUAAAABAAIRAyEEEjEFBkFRYRMicYGRMlKhsdHwBxRCwSMzclOCkuHxFRYkQ2KismNzk8LS/8QAGgEAAgMBAQAAAAAAAAAAAAAAAwQAAQIFBv/EADARAAICAQMEAQIDCAMAAAAAAAABAhEDBBIhEzFBUSJhkTJxoRRSgbHB0fDxBSOi/9oADAMBAAIRAxEAPwD1V27mEb/yJ/8Akd+6hOw8Ef8AkO/w1x8V5bhfxPxoBl7XR7zG/wD1hWG/i3ivdpH+47/9rk78b7Q/8r+4/wBLL+9+r/sej1NzcI8d1r2+DnfJ8oP3r3aOGczs3F7XzqO8MsaxY6rNH4pYtzSQ2mAOTD+7isfHb916pzVHk8BYAeAAQszxSjUIc/b9LDYo5Yu5S4LRwtT3Sl+Tqe4VnUd5qj5gm3QKXDb6Pbx+ASlS9DVlw4Kp7h9E38pU90pHfR7rfsFnP3teTqfRRKT8Es0PydT3SuflKnun0S2fvc+99OYU1XfVzgbD0VW+1MhAcM/3Sm/ln+6VGd5XkmOU6LuG3yI1APiFfy9EscaDvdPommi7kfRXqe+OewY30VGvvZfQeilu6ohzsncj6LnZHkfRPpb1SYgHyTqm9oEjK30U+XoqyA0zyK4aZ5FTU958xgNb6KSnvS0G7W+iu36LKuQ8lzJ0RDhd7qBH8phP30VfGb10TpTYFW//ACmUYuVLKtCnvLTJ9hq18FtnDuF6IKjyV3LpgxlXMoRXidqYbhQ+Sps2jRJ/khZ60S9r9GBlSLAjGjisJHew/wAlWxmMwn6aB+CnWj7JtfoFsg5LnZjktsYvDz/KKvYd+BI71Ny11UU4v0CvZDknMbGiIsVUwI9lrlTbVwp4OWuqitv0MqSuFxRPhsFgnC73D1UeLwOCbpVPxVrOvZWz6AtVpyZPwTDR6lbvYYYm1RTDZNA3FcK+qmTbQNdj1K4iB2y6P9u34JK+oSkBGHpnK6y4KR5H7/ZFFOiOSsU6Q5IT1deDXRBuiwik7W7hYKq+g6ND9PBGxYOQTnURGiEtZXg08II4GiQHzIsqYpGdPvmjQsHJRikJ0C0tXy3RTxcAvQpmeOnqq3ZHr9UaVMOBwUPYt5BWtX5op4gcwDbutw+wmAH74Iqp0W8gnuwzfdCz+1K+xfT4BjCE9+8d1UmtKMuxaOATBhWe6FpapK3RTxg9gGXKp1x3j9+SMvybQJAVZ2DZ7oVR1S3N0R4+KBjCN7w+4XatO58UT08GyfZCW0mUqNN1R7QY4cSeAWlqrlSXLKeOlyYuyqcP4aHVR1zM6a/cLKxe3qjnTSApgWgNa4+ZcFRqY2obue49Jy/AQn4aPJJ7nSFZarGuEb+Dp3Pgoag+/qsujtF7DZ587rY2HtFlZ/ZVGAOMkEaOjhHA/RTLgnjTn3RePPCb29iDDjvDxRFs093zTxs1gMgKzRowuZmzKa4HIQ2jSU+kulq61LhLLIrWVSqVIonhUiyFy6HlJwXGtWyEbzKa1qmDE9lNXuookogq1VpAt6rtJikfCXc+QlGNVw8FROlXq2Ipk5Q9pPKRKjqU0wpPyYpeDOdK4rJppIu5GaLjGp9NyuuwLsttVCNn1OSX7l2hNdK0K1GKYPNV6Gz6kgwtzadMGk1rLnj0QZqVqkWpIGHFKi2SpTs+pyUmFwbw4EhFadFWiXE0bDwWeQinaNAGmMglyxRsqr7qHi3VyiSaK1FsqxUpWVrD7Kqg+ytLGYElgDW3UluvsRNA0WrrWK//ALKq+4uN2bVB9hapmbQn0TkCzqghFVaiBS073JDlXCvJ9koeK+bNNoipC6H/AMRqxZ2LP0lrn+JnL9+KJaWHeD7JWd+Juzg9uBeONR1Ijj3srgP+1yd0TS1ML+v8hfU84mkeZhtV+jXHwBT27PrucG5HSbRBXr+ytntbAYwQESUcM2cwptDojReihn3I58tOl5PnrF7MrUz32OHiCpNiV+yrMe4Ehpk8DoR+69q2/Rn22gjhZeUb1YTs6stEBw4cxb6K96ncH5MyxOC3oOWuBAIuCAR4FWqNNVaVEta0QbADTkFubHohwOZeSyvauDtRMiqyFG1XMe05jAMeCqtpu5H0WovgjJG07KGoxbOzMPmBBELPxzIcRCxGfyotrgokKSnTTSVp7LoB8zZbnLarKXJnlihxWKZSaXPMAfdldxYhxAQbvq4uLGcAC7zmEfTY+tNRfYxmnsi2jRfvhSAOVrjymBJWDidqVqxDM5DqljwY2LiIvoFiVGgARrxUD8Q60nTRd3DocWPmK5+py8mqnLiX6FjAY00qgeW54OhJieBRvu9vA3EucwsLHBubWQRxQTgaDq0tptLiBJjkiPdPAHD1H18QRSYGFoLuJcRYDyWNfjxSg2/xLt7+xeknkjJJfh8/7CgtSVB28eGm1T4FJcbo5f3X9jqdSHtBZmS7RBw3ir8mpf7w1vdajdCQPcHdOvZP7ZDdbGVBSz2kNlYzN5q/uhZjglLsU5JB2HoO2/vaKbjSoEF+hebtaeQH6j8Fm7V3ordmWwGlwiRrHGEGNcAbp3S6JN7pi2fPSqJr43HYiq4l1eoY/wCogRI0a2w1TsJtDFUnh1PEVAWm0vcWxyLSYI6QtbYO7FbFNLmtLWnRxtK08f8Ah7UbGWoTa46rp1jSqhT5vkJNy9+PzFQYfEBrapEscLNqRq2ODvgemiOiwr5r2oHYeqACWvY4EHiCDII9F6Vs78T3vptJpAugB0H9XGy5mq0lPdj7Maw5m/jLuei1HQq9d0oId+IJOtE+oUZ3+/8ARPqEp0J+hjcguqyq5lCx37H9ifUJo30DiB2RuYWehP0TfEKc6E96aj316VO2Vrm1Gji5wa8m3SW+q18ftE0qfaFsjkNVg4na7Krm1IyubAvyNjB8/giaeDU7aJKmgaxG1sbTfIfUFza3DoOaI8PvNjfyxqwbHLJHennCu4rbGGMAtDn84FhzJ5KVu2cL2RYazB3xf9MaLrOXCpC6hTfICO2tjKr8xqVifGPIAq7tWk9zKTqwIc14LpAmInQeARJh9t4drvYa4/peBZ3gsjaG0Q+q13DNJ8Ij91qUuxhQpdwo3ee99EOqGSXOI/pzHKPRbtOnyQ9sPbFNzcrWuJFzbmeCtYjeejSdlcHA+C4mSDc3SHE+AhpUhyVgMHIIZp75Ybm70KnZvnhfePoVXTl6L3II20wOAUOIYwAkgAC5J0HVY/8Avnhff+BQZv5vcK0UKB7pEuPvHgzw4+i3j08pyqjM8iirNHaG++Ga4sZTzAfqs0Hw4x1VD/eyqDLWUo5d75ygz8hiG951IubrpePJdoMDSTTk82yZHkupHRYUuVYm8+Sz0HAbx0qpDXsyONrwWz0P1AWfv9h2upscwd5hMx7pCBnYkgz8lsjbj3Yd4nviGmRMtNs3iNFlaOMJqcfsX13KLiwaqm/VQ1aZ15/srtCg57hkEwQT8/2S2lXFQghgZlbDgDbNOqeT5oVkuLN/8N8XQp1KnbC7g0NPWdPko9+apdjXMiGMDcreFxJP3yWbhaLDVoMpm9Ts2u1s8ugj5I+/ETdGuxv5vIQGANfppNiPVJTUY6hT9r7DEXeLZfYEqONaGgZAPILqwHkkyXJI3SRrrv0FgYUiwqwE0lcvcP0FGOb/AMMf6AhFlEox2iP+HP8ASEGbRxXZstrwVae3wvYLJXcwNs4iXxNgnbt7PFesMxAY25JIA9Ssms6TrJ4lG+7Wxnvw2akQH3N7yuy1shRz4/8AZM9H2S9jWgNqsI5NcD8ir1R4IPfXluA3fxD3yR3gbkMcyBzLuJRHvXsOs6lRyOJzMJcLnvNsbC5QqrgPfFsGfxJwbLVWOa4g5XBpBMHQkDRCuw8RleBNnW+i36mzKvYVi+AxrD+ktl0HSb26oTwwMiEVJODiLzbU1IPfyL+SjdhHclqbFxPaUmk3MD5K04LkuTTofSTQP/ljyUuGw5zst+ofNa7mrlJvfb/UFN5e02t5KYFD0Qc6nIhGe8p/geiEqtUMaXHQD7CDib8BKVcmBWwLqhmm4BwBBaeMHn6p9Ld5pbJe0HiCePr4qvTxThFY3Jc7MOmYx8IWqzamCgF1Il3iRBXcjdUc243bRTpbLexzXvc3s2kwB0FlPgXBxcRoLeZ1WftXavanLTEN4DotLYNRrf4Z9ojMOsa+d0LUX02zeBrfXgK9zKQL3yOAVXeqhFew4K9utVDDUcTAAkk6ALD3t3mZnDqDmuGhJHLkuZijKeTgbySjFclbsui4aXRYmL3jrm1m8RAg+fREGxNv06jWtqloqEwABbpfmmp4ckI2AjmhJ0Q9l0VbdLDCpiKlRwnKe7xAmf2CKcY0NpvMCzXH0C862NWcKbu6HDM0HMSADl1Mei1p/lGT/ImV7ZRPbaBaAJDdEJb50MMe/QewYht8rLucORDQfim7j4WqXRU/lua4gZnOggTIzcPBVsVsHGUyRQkNcdabWmQZkOJIM6XR48OiS5VgjthrXNbXZbNZ7eTlQovg30Nrff3ZamP2bUwxcysIzi/QnRY1NpyGeBR49hafD5CfCYMU5c2R3QWnmS2b+oQ/XwZDXd091xzH5Im2S4VaVMOP/Mv1aGT6KpjmZadW9nlx8w4ocZNM3OKaoxqv8N7X09WlrmzfvCCPiF7BvPtTE7QotBc3JlDnU290ExeTxgryahDnNEcW6r1J7mU6bG5hmy/O1x5Ieok+Eu5WKK5bPJcU0McW5dD87pLX23TpOrvPaN1A9GgfskjpqgTuzZTYuE6VwajxC4h2wp2if4BH/SEAbcfIyhH213AUTPILz2rUc5zhOUT5o2ijbsVzukZOIwvZtBNyfmi3cbbIo078DCG9pVA4tA4T8VVwGJNJ/Np1H7rrTjuiIY5bJ2etN3sqVyezb3WXLfZc/oDwUGI317RrabaJpuplziSQR4E8dIWTs/AsxNIPpsY97eYkkHgSLrjthunNUoNY1veMlztL/qJgIFIc4og3s3m7fDuEQXCPWyBMHa/j8lc23tAVKhDfZB9T9FWoiLI8Y1ETyS3T/IPN36rDTGQ6DL1tz6rTKDd0zlqvHAgW4aoyXKzw2zaH8Ut0UxpXaPtt8QsnaW3WUyWtBc4W5NB8VgYvaFWrZzob7rbDz5omLSZJ89kDyamEOO7DDe7eejl7Kme0fNy32B/e4nwQLWxz3E5jI4DQA+CYaXKxUTwZuuhh0mPEqXf2I5NROffsSU3SD93VdwUzqeUyND8vqntoh3svaTyBE+mq1KNcl452qOYdvFSVHEVKTgbgkT4hW8Ds5zrGRPPkq+2KtOk8NDpcwgkAdNJ5rMeXQTJxGzY2bvEGsqU6zJDwWlw004tQ5WqsDWtNMWJl0kzyTmvDu83j9wnZVqGnhHmPAGWaUvxFd9XtDLiCdFLgKB7WmWtPtN0HVMqYVuostrc/FvFXsjpB+5VZW4QdIvElOathdtT+TU/9t3/iUI7i41lKpUzi1iJ8wjSq2QQeII9V5k49jXIdbKSD5f6BI6T5RlEezPbKMj0V+9lRj+0bSDg4FoExHAW63+CkdvLWptFVzqbDxpNe10t96JkOWPs/Z7KxbVpMY4kXBktP09Fu1NiyA6tRptDbgDSRxM8fJFqJu33MHeba4xTc2XS5PTkgp7CGgtu1wnwPJbe82OZJpUovayyC7KGDgLet0bEqQrnlukb27OILGl4Hsgtg8yY+ikxQDsK0ZAHQSTxJzf5rO2fjIbEhrpBvo6ND8NeipjG1ZDXG0xHmCtJJsw5Ugs3l/DvE7Op08TUqU3teQCG5g5jnNLgL6xGqr1dqktFSQXRefDh0RdvZvWcVs3DsPtElrjzcxpbmPKQQfNeb7JwxqPOb2R148lJc/wAAcbRKMQ3+xaeplJa73UmmMuiSlSNWiWUmHvDxHzUdKu13suB8E6m/vN8R81xaaO1YS7xNPYSOi8sxWIvA14+Mr0XerbNOk1tIhxc5uYQBEAxeSgLFDtahNMZSfj/mm9DFqNtcCGpknwnyQGAAdXHVU6rxm1Vh7QyZkunidFBTpgEF1gV0kJM1tl7RqUHZ6To5jgfEK/tTb+IrU3Nc+xBmLT0WQyjcFuhIEdSY+iIKWyHFhtwQpJJ2Hi21QFU1exA7rXD7KrVaRa4tNiPsKVtSx4tOo5I7Flwa2z5aztGOaX5YLSNegM69US47aPZ4Zr57zmtDfFwmfISUDUG5u7fXyWttyt/LpA2pU2jzIE/DKlJYVPIr/P8AgMrK443RVbVkmeClkKk86OGvEfNSUKsyOkj90+JFl0FRkxrcc0qT5suVGHUeisoixWJ7uQDvc+AHRZvYELTpvBtoeR/ZPdRVUQI939oZ8O9z47SkDPUQS13wI8kGuw0kmZJuSeJPFbOypZ2g4Ppub5i4/dUqTUOMKbCzm5RRHg6RbKtLoC4UUEMeiv8ADDEUvzL6VUDvsljiBIc3VvmDP91CL3XCWzMb2VelUBjK9voT3vgSh5Y7oNBMctskz17amyHU5c3vN6ajxXl2+dMNxAcB7TRPjp8l6tV222nSL6htcRxJ4ABeSbaxhrVC6ABeBrr9AuZp4OOSzpTTyQoo7H2xWw5/hugE3HDxHJbG0d4MRWbldUMchZDtOlJgLQf3bn7Kdmldi2NtJpsgr0o8dU2rWki3KfqrFCowznDj4clH2APszc/ei0mYpt8D6DjBi4Bt5pU6kvp2m+nhqFcw+y3xaw66+nBVxQNOs0vaQ0ceEweI8llNNhcmnywhcoui1jcQXPaATkAJgWudVE3G955Y7KDf0EwtZ7KDsFWqAfxW1WgP4FmQyyPEz6IbDQADzvB5LUabYvK1Rv4fHsyjM9pPEzxKSGOzCSnT+pW82cDRays3ISWmQZ5qw3HO7TKBfNA9VZ3JoMxOKbTrOLWlrjIt3wLfutvamxsPQxDuxc5+UEOLtM5sQLcJ+aRm11KkuaOjikow4LWDpMqiK0OkQfCJgcoQXvLs12Fqw12Zhu1wImL2MaEfQrZGIIa4z7LjPgDPyVbbR7Rl/FMY/jx4Fsny58mFh3h57xubCI+wq+Now6CeQtcW6qMsLCU8V8zgXcI10ACPVALtFzZztRyE/wCGDCL9ibec7FU6cA03uyERcE+yQdfXhKDziwHHLo60wQBzjmibcB0YlxjRvS0nX4EIcvbCwfgg/EHZJp184HdM/wDkTH/ch4OpWgOBIuDwPTmF6rv5Ra7BvdEkRHqJ+Eryp2HGQOZfnxvyUg7RMkaZDSf2VUH528FJisTnqOqH9TiY5A6DyEeihrhuUWId5JuWQenyRopXYCTdUPadW8dRzBUYqwQflp18FyZEj2m/EKOq6bwPEWPmFsGXnGO8FYZVkLNoVeCmaY00VpkLNekHXFjwKbh8R+l2vzXG1FFiRPiNCoQ0KdSOKrUWRxVFlY81cp1u6CoQnm/go3OTH1IEDU3PQJhcrKOVH6lUdQp6psVAsssLdp7TNTIQbCmw/wB5zQXHxuB5LHqiQYvzT8HdgB8fVbewdnCrWpsi053f0t09THqkm6Z6HDjXRUn6O7J2AAGlw6nxWPvHS7OuJHdgEAcOaOtq7Up0payHvFreyPE/sEG4+vmJc+7yR4RyCrHJuXIpm08li3NUigK7GkODOEHx5rSwdRrpc1oAWfiKJcJEX5aBWsC3KwDndbyVtN/8an1r8UX31CbAqpXpga2nzB6FShy4YMgoK4O9OpIyWCG1aUmJa63Q6+hU+DrsLKgcLkAA6mBoI4KviSaZfqJaG+WqzWlORXFnkM62zcfV/wAyfI7gEkwOSWwB6nhdhUsJTfVgl7WOIceBi0LDp15a065myfgP2C2N48M5jcgqmHODSCZJGpg8rIQw+JiWHVhMdRNwkMcd3LH5SrgmrPipUbwe0HziCq9XFxTbOsQfT6Lu0Hd5jxfX0iT8JWVXOon9Ux04/smFGwUpUybGNBYCPa09NSs8gwAdOHJTjEFrmuAFribjXko2vJgaAeqNFUAnJPsa2x9nGs18AuyZYa0d6XE94nTKADPlojXdLZwo5nVIa92VrdbtAJESLk3PW0cEGbuVwysJy3a5oLzlaHkdwkyBGYAXt3rov21Ue05nPkZahZ3ZZUApteHCTZskjXmBrbE42xnArjYUY3DGvhnsF5Bgi68kr0xTDmOs+Y9Dx5Ig2dvTWpNim3szwbZ7Db3DeLjS/ismrs19V3aVHEue6XONhmdoOgsY4QOhjChRPlLuqB/E13OgG9/u6noi8cwpNoYA0rHxBOpBOsKGmbtPVMRFJp3yNc2LjUKKpGo0PwKuVDB6HnzUFQ8Mok+h/wA1oyVWFT06kaqvPJTsfIgrJCfOuz6KrmXW1iNFdkHVmwusqQ3XyTxiGmxt8lE0X6BQhKJ1OpXC5Nc5cKhBlV2gXGtkwONvVamBwVN7f4hc2+rWzbTWL+CsO2Sxjg5r3kC8PYWzY6O0Q3NIPjwSnJfUlp0bgDktDD4pzc+Q5Z7pIsco4TwCpYesCetx+/1VKjUJc4PHcmwPG+p5pSrPU7oxpVd/0L/5pl4MxrHDkJVHFVGlwB0MenNQ4toae6bTMcPJS13MMOB4QR5IkIpcnI12oyzlsl4IX03lsMNuI08QFaw1UkkHhbyVA4kiYNuIUuBdJP3wVzXBWhntnS8mq0rhcOKa0rjignb3cEe0aTHUXOzd9pbA4FhB+II+KwAF6RszZE7LxFUxDnPieAptaJnxc70XnITWLtR5nXNPM2hqS0MJsWrUYHtaSDMHwJH7JK3lguLFljk/AXY/aZqPbLYDTJvOoj91h7ewpp1b90yJ4kHWdY0RLjMFGY209b8EP4yk0iDb6peFJjmRWjNrVw6mRN2kkWi02Opjw+apscMwziBpx+N/uEqpIN/D4QoS23gmUhRtl7EuZ+gGNBm1jhMGP9VXJAgnRKRlm0yZ4ddPPlwUTq4IiLc1pGJMmFW8g/6rQwmKe957So5wdqHVC1h49/vDu66c7RZYjWgn6CVoYdrQIOmuaQeIaMzAZFwRzhwNxE1JhMSd2bdan2jXPDspptDy105iCATH9LcguZtwsCzYu0WOcWVXEAjuEASCOoEj5WVfFVOzw8QRUqNyy4n+XnzdxkQ1pvr1ImZXNj4aoKZJZLXyQJj2ZaT1PeFukodeRvruq8D9p1S5jpu2czrh1zpLoBm8CTxPMrFHsjxUm1cQ4PyloaA2IgHXUyePXUKOmJYix7CWWW5lp4kKvUFr8E9r4AM+USmOcORWwZVY25Se4nRdJUlEcFRCHKnNaToFeZQ4lKpW4MHmpRCu5uUXiVxqc6jxPqVwWUIIDiVyU57kx6hDf2dXy0m3fJt7bGtEAcCOpUG1Ma0ubkfmN5gucBpHeMA8dAh83KeDERzQnjXcYhqHFo1nVDIcNfgeic6seVvreExhkKOr7VuQQKO5uaVoncA7VUqtMt00VphTXPVp0YywjkXyKjKd76Kxh3DMUoPKU2ie/pC03YGGNY2q9moxJ5TWrjzadR8UE6d8E1beN7aBwv6IcP8AG7MUOqWu6SfFREJqEUkeYzzcpv8ANhFszeN9Kkym3JDRFyZ1lJDJISQ3poN3RpaiSVHse0aIIKEtp4MnNAJgEmATYXJMaAc0VYuqhjabnOJDZvItax1B6IMHyMzXAH1zcpU2T4G08JjRbVTd15vmA8Zn0CzcTsyrTuWmBxg/IppSTXAm4td0UnU11rLKWxPim0m2lbQNov4TYlY3DWunhIHzWhhtiYhhDvy5MXHdD7yOGYgwCdbWutbZj5a1w4gH4Ldw+JICXlkY5CCoCsVsPGVHZn03XjUtAsANJtpyWxUwOIZSZnqU6fZtiWZi4gCG3tDhe/hyWvWxDnOAWZvFWcKZCre2zUoqgG2jW7Sq9/M+Hn56p+EEiFWq2J8VNhNPNNIQZNStLTw+ShrR4eOY/FTVXNBBBg+BUVe4Jjz73x4LRRHSEhcOq5RKlbzVEH9sYuuNrqLUqRlEqEOudImSmNKdUjQJobyUIIXXDqpCmN1KhCtlT8i64XsnhqohbwvsgqYdQSRaB1+yoMH7PnH0Vqk66Wl3Z6DTu4R/IjEnhHRSClKmc1dCxYysfsg7IjioqQOfyVxyrsInS6iZmcEmi1B4KpWMd4d08RwKu039FTxT3To2OoCke9Gs9KFlGq2TMaxom1GEEgjT7lPBMkk25Dw4JmdzzHElNLhHm502VXC6S1f9nN5pLHVib/Z5h3iqywsXXIKSSUj3G5D8HtMzBJU+0tstjI0S6NToPqUkkeMVYGUmkCuJEunj6dVVc+LHRJJMIUYcbiNNSk6YLWuga5gTcgiIi8i/FFv5EQkklMn4mOYn8UQU8GMyztv4MZCkksJ8hH2PNMRS/iOHUplMCLpJJ5HPaJmu6np/p/mk5uvPzPxlJJbMlNjlM48EklRB7GwpO0OiSSsgwRqul8XSSUIRg8V2mLJJKiEeWCpwLLqSi7EY7CMOo0uD8NPT4qw+Qbcf2ISSS0n8ju4IpYU15r+hOwHipQkkhD6VCeqlMDMZ8gFxJWjGTuiWriMtnNLephw+BULQHiM08rFJJaSpWL5Jt5HjfYhODJdlm8K2AQA0kW4gAHzI1SSWnNsRWGKt/Ur1sTBISSSRFBUKyyyUmf/Z" width="220" height="342">
+    <h2 style="color:red">KAVACHAM</h2>
+    <h3 style="color:blue"><p>action</p></h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="None" data-toggle="modal" data-target="#trailer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxGtyr8UewWhS8a2Kxrw1tS9E31XhuzbjJCrWawIUw-96PCal4" width="220" height="342">
+    <h2 style="color:red">SAVYASACHI</h2>
+    <h3 style="color:blue"><p>action</p></h3>
+</div>
+
+    </div>
+  </body>
+</html>
